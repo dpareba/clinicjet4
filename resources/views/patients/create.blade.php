@@ -157,7 +157,7 @@ Register new patients in clinic
 <script>
   $(function () {
     
-
+  	$('#name').focus();
     //Datemask dd/mm/yyyy
     $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
     //Datemask2 mm/dd/yyyy

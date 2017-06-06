@@ -299,7 +299,7 @@ Add Consultation for Patient Visit
 														<div class="col-md-1 col-xs-12">
 															<div class="form-group dosemorning {{ $errors->has('dosemorning')?'has-error':''}}">
 																<label class="control-label" id="dosemorninglabel" for="dosemorning">Morning</label>
-																<select name="dosemorning" id="dosemorning" class="js-example-basic-single form-control">
+																<select  name="dosemorning" id="dosemorning" class="js-example-basic-single form-control">
 																	{{-- appending values between 0 and 10 using jquery --}}
 																</select>
 																<span class="help-block">{{$errors->first('dosemorning')}}</span>
@@ -667,7 +667,7 @@ Add Consultation for Patient Visit
 													<span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
 													<input event.preventDefault(); autofocus="" type="text" name="medname" id="medname" class="form-control">
 												</div>
-												<span id="medname-error" class="help-block"></span>
+												<span id="medname-error1" class="help-block"></span>
 											</div>
 
 											<div  class="form-group ">
@@ -751,6 +751,7 @@ Add Consultation for Patient Visit
 							var prescriprowcount = 0;
 
 							$(document).ready(function(){
+								$('#chiefcomplaints').focus();
 
 								// $(".js-example-basic-multiple").select2({
 								// 	placeholder: "Recommended Clinical follow up"
@@ -782,16 +783,19 @@ Add Consultation for Patient Visit
 			$('#doseafternoon').empty();
 			$('#dosenight').empty();
 			$('#dosemorning').append($('<option></option>').val('0').html('0'));
+			$('#dosemorning').append($('<option></option>').val('1/2').html('1/2'));
 			$('#dosemorning').append($('<option></option>').val('1').html('1'));
 			$('#dosemorning').append($('<option></option>').val('2').html('2'));
 			$('#dosemorning').append($('<option></option>').val('3').html('3'));
 			$('#dosemorning').append($('<option></option>').val('4').html('4'));
 			$('#doseafternoon').append($('<option></option>').val('0').html('0'));
+			$('#doseafternoon').append($('<option></option>').val('1/2').html('1/2'));
 			$('#doseafternoon').append($('<option></option>').val('1').html('1'));
 			$('#doseafternoon').append($('<option></option>').val('2').html('2'));
 			$('#doseafternoon').append($('<option></option>').val('3').html('3'));
 			$('#doseafternoon').append($('<option></option>').val('4').html('4'));
 			$('#dosenight').append($('<option></option>').val('0').html('0'));
+			$('#dosenight').append($('<option></option>').val('1/2').html('1/2'));
 			$('#dosenight').append($('<option></option>').val('1').html('1'));
 			$('#dosenight').append($('<option></option>').val('2').html('2'));
 			$('#dosenight').append($('<option></option>').val('3').html('3'));
@@ -949,6 +953,7 @@ $("#doseregime1").change(function(){
 			$('#dosemorning').show();
 			$('#dosemorning').empty();
 			$('#dosemorning').append($('<option></option>').val('0').html('0'));
+			$('#dosemorning').append($('<option></option>').val('1/2').html('1/2'));
 			$('#dosemorning').append($('<option></option>').val('1').html('1'));
 			$('#dosemorning').append($('<option></option>').val('2').html('2'));
 			$('#dosemorning').append($('<option></option>').val('3').html('3'));
@@ -957,6 +962,7 @@ $("#doseregime1").change(function(){
 			$('#doseafternoon').show();
 			$('#doseafternoon').empty();
 			$('#doseafternoon').append($('<option></option>').val('0').html('0'));
+			$('#doseafternoon').append($('<option></option>').val('1/2').html('1/2'));
 			$('#doseafternoon').append($('<option></option>').val('1').html('1'));
 			$('#doseafternoon').append($('<option></option>').val('2').html('2'));
 			$('#doseafternoon').append($('<option></option>').val('3').html('3'));
@@ -965,6 +971,7 @@ $("#doseregime1").change(function(){
 			$('#dosenight').show();
 			$('#dosenight').empty();
 			$('#dosenight').append($('<option></option>').val('0').html('0'));
+			$('#dosenight').append($('<option></option>').val('1/2').html('1/2'));
 			$('#dosenight').append($('<option></option>').val('1').html('1'));
 			$('#dosenight').append($('<option></option>').val('2').html('2'));
 			$('#dosenight').append($('<option></option>').val('3').html('3'));
@@ -1287,7 +1294,7 @@ $("#addmedicine").click(function(e){
 			var obj = jQuery.parseJSON( data.responseText );
 			if(obj.medname){
 				$("#medname-error-label").addClass("has-warning");
-				$( '#medname-error' ).html( obj.medname );
+				$( '#medname-error1' ).html( obj.medname );
 			}
 
 		}

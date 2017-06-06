@@ -49,7 +49,7 @@
                         <div class="col-md-8 col-md-offset-4">
                            <label class="radio-inline"><input type="radio" name="doctype" value="JUNIOR DOCTOR" id="jrdoc">JUNIOR DOCTOR</label>
                            <label class="radio-inline"><input type="radio" name="doctype" value="RECEPTIONIST" id="rep">RECEPTIONIST</label>
-                           <label class="radio-inline"><input type="radio" name="doctype" value="OTHERS" id="rep">OTHERS</label>
+                           <label class="radio-inline"><input type="radio" name="doctype" value="OTHERS" id="others">OTHERS</label>
                        </div>
 
                    </div>
@@ -162,11 +162,26 @@
 @endsection
 @section('js')
 <script>
+    $(document).ready(function(){
+        $('#name').focus();
+    });
+  $("#gp").click(function(){
+        $("#speciality").attr("disabled",false);
+        $("#speciality").val("22");
+    });
+      $("#ayush").click(function(){
+        $("#speciality").attr("disabled",false);
+        $("#speciality").val("22");
+    });
     $("#doc").click(function(){
         $("#speciality").attr("disabled",false);
         $("#speciality").val("22");
     });
     $("#jrdoc").click(function(){
+        $("#speciality").attr("disabled",false);
+        $("#speciality").val("22");
+    });
+      $("#others").click(function(){
         $("#speciality").attr("disabled",false);
         $("#speciality").val("22");
     });
